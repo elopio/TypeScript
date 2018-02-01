@@ -1,0 +1,22 @@
+name: typescript
+version: git
+summary: superset of JavaScript that compiles to clean JavaScript output
+description: |
+  TypeScript is a language for application-scale JavaScript. TypeScript adds
+  optional types, classes, and modules to JavaScript. TypeScript supports tools
+  for large-scale JavaScript applications for any browser, for any host, on any
+  OS. TypeScript compiles to readable, standards-based JavaScript.
+
+grade: devel # must be 'stable' to release into candidate/stable channels
+confinement: devmode # use 'strict' once you have the right plugs and slots
+
+apps:
+  typescript:
+    command: tsc
+
+parts:
+  typescript:
+    source: .
+    plugin: nodejs
+    node-packages: [jake]
+    build: jake
